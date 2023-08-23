@@ -1,0 +1,10 @@
+#Bulk Assign License Users#
+$collection = Get-Content 'C:\Users\user\folder\content.txt'
+$i=0
+
+foreach ($item in $collection) {
+    $i++
+    Write-Progress -activity "Adding Mailbox" -status "Mailbox: $item // $i of $($collection.Count)" -percentComplete (($i / $collection.Count) * 100)
+     
+    Set-MsolUserLicense -UserPrincipalName $item -AddLicenses "Contoso:ENTERPRISEPACK"
+}

@@ -1,0 +1,2 @@
+﻿#Get distribution lists that user is owner of and export to csv file#
+Get-DistributionGroup -ResultSize Unlimited -Filter {EmailAddresses -like "*@domain.com"} | where { ($_.ManagedBy -contains "username")} | Export-Csv C:\Users\user\folder\ownergroups.csv
