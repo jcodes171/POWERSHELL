@@ -7,7 +7,7 @@ Disconnect-MgGraph
 ##
 Update-MgUser -userId "first.last@example.com" -BusinessPhones "[INSERT BUSINESS PHONE NUMBER]"
 Update-MgUser -userId "first.last@example.com" -CompanyName "[INSERT COMPANY NAME]"
-Update-MgUser -userId "first.last@example.com" -JobTitle INSERT JOB TITLE"
+Update-MgUser -userId "first.last@example.com" -JobTitle "[INSERT JOB TITLE]"
 
 #Read csv file#
 $users = Import-Csv -Path "C:\Users\user\desktop.users.csv"
