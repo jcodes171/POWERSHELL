@@ -1,6 +1,4 @@
-######################################
 ###Create Service Account###
-######################################
 $email = "email@example.com"
 $DN = "DisplayName"
 $Alias = "emailalias"
