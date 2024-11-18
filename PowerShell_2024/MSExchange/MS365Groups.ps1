@@ -6,11 +6,11 @@ $users = Import-Csv -Path "C:\Users\user\Desktop\txt.csv"
 
 foreach ($user in $users) {
     $userPrincipalName = $users.UserPrincipalName
-    Remove-UnifiedGroupLinks -Identity "Accounting" -LinkType Members -Links $userPrincipalName -Confirm:$false
+    Remove-UnifiedGroupLinks -Identity "Department" -LinkType Members -Links $userPrincipalName -Confirm:$false
 }
 
 #Hide group from GAL#
-Get-UnifiedGroup -Identity "Accounting" | Set-UnifiedGroup -HiddenFromAddressListsEnabled $true
+Get-UnifiedGroup -Identity "Department" | Set-UnifiedGroup -HiddenFromAddressListsEnabled $true
 
 #Get 365 groups in Microsoft Tenant#
 Get-UnifiedGroup | Select-Object DisplayName, EmailAddresses | Export-Csv -Path "C:\Users\user\Desktop\file.csv" -NoTypeInformation
