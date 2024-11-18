@@ -1,10 +1,7 @@
 #Connect to Exchange Online#
 Connect-ExchangeOnline 
 
-###############################################################################################################################################
-############################################           Custom Attributes                  #####################################################
-###############################################################################################################################################
-
+##Custom Attributes##
 #Show mailbox custom attribute values#
 Get-Mailbox -Identity user@example.com | Format-List CustomAttribute*
 
@@ -15,10 +12,7 @@ Set-Mailbox -Identity user@example.com -CustomAttribute1 "[INSERTVALUEHERE]"
 Import-Csv -Path "C:\Users\User\Desktop\custom1.csv" | ForEach-Object {Set-Mailbox $_.'UPN' -CustomAttribute1 $_.CustomAttribute1}
 
 
-###############################################################################################################################################
-############################################           User Email Aliases             #####################################################
-###############################################################################################################################################
-
+##User Email Aliases##
 #Get user mailbox details#
 Get-Mailbox -RecipientTypeDetails
 
