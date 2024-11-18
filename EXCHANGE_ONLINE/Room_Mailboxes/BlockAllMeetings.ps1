@@ -1,5 +1,3 @@
-##############################################################################
-##############################################################################
 ###Block All Meetings###
 $Room = "Room@example.com"
 Set-CalendarProcessing -Identity $Room -AllBookInPolicy $False -AllRequestInPolicy $False 
