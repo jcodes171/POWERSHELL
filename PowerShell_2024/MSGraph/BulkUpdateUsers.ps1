@@ -5,9 +5,9 @@ Connect-MgGraph -Scopes "Directory.ReadWrite.All"
 Disconnect-MgGraph
 
 ##
-Update-MgUser -userId "first.last@example.com" -BusinessPhones "+1 (###)-###-####"
-Update-MgUser -userId "first.last@example.com" -CompanyName "+1 (###)-###-####"
-Update-MgUser -userId "first.last@example.com" -JobTitle "+1 (###)-###-####"
+Update-MgUser -userId "first.last@example.com" -BusinessPhones "[INSERT BUSINESS PHONE NUMBER]"
+Update-MgUser -userId "first.last@example.com" -CompanyName "[INSERT COMPANY NAME]"
+Update-MgUser -userId "first.last@example.com" -JobTitle INSERT JOB TITLE"
 
 #Read csv file#
 $users = Import-Csv -Path "C:\Users\user\desktop.users.csv"
@@ -56,7 +56,7 @@ foreach ($user in $users) {
 }
 
 #Bulk add users to mail enabled security group#
-$users = Import-Csv -Path "C:\yes.csv"
+$users = Import-Csv -Path "C:\Users\user\Desktop\yes.csv"
 
 foreach ($user in $users) {
     $userPrincipalName = $userPrincipalName.UserPrincipalName
