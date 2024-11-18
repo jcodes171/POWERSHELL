@@ -1,6 +1,4 @@
-##################################################################################
 ######View Permissions######
-##################################################################################
 $Mailbox = "sharedmailbox@example.com"
 $User = "user@example.com"
 $MB = $Mailbox + ":\Calendar"
@@ -9,9 +7,7 @@ Get-EXORecipientPermission -Identity $Mailbox | ft
 Get-EXOMailbox -Identity $Mailbox -Properties GrantSendOnBehalfTo |  Select-Object  PrimarySMTPAddress, GrantSendOnBehalfTo
 Get-MailboxFolderPermission -Identity $MB 
 
-##################################################################################
 ######Bulk add users to shared calendar from list/ .txt file######
-##################################################################################
 $Mailbox = “mailbox@example.com” 
 $MB = $Mailbox + ":\Calendar"
 $collection = Get-Content 'C:\Users\user\folder\calendarusers.txt'
@@ -21,9 +17,7 @@ foreach ($item in $collection)
 }
 
 
-##################################################################################
 #####Get Specific permissions for shared mailbox(es)#####
-##################################################################################
 ###Use below for specific mailboxes#####
 #Create new array list variable#
 $Rollup = New-Object System.Collections.ArrayList
@@ -56,9 +50,7 @@ $Rollup | Export-Csv -Path "C:\Users\user\folder\smbdelegates.csv"
 
 
 
-######################################################################################
 ####Export and list all shared mailboxes and permissions to them for specific domain####
-######################################################################################
 $Rollup = New-Object System.Collections.ArrayList
 $mailboxes = Get-EXORecipient -RecipientTypeDetails SharedMailbox -Filter {EmailAddresses -like "*example.com"}
 
@@ -83,9 +75,7 @@ $Rollup | Export-Csv -Path "C:\Users\user\folder\smbpermissions.csv"
 
 
 
-######################################################################################
 ###EXPORT SHARED MAILBOX DELEGATES AND PERMISSIONS###
-######################################################################################
 ###USE FOR DOMAIN-SPECIFIC MAILBOXES###
 #Create new array list variable#
 $Rollup = New-Object System.Collections.ArrayList
@@ -119,9 +109,7 @@ $Rollup | Export-Csv -Path "C:\Users\user\folder\smbdelegates.csv"
 
 
 
-######################################################################################
 #####EXPORT SHARED MAILBOX DELEGATES AND PERMISSIONS#####
-######################################################################################
 ######Use for specific mailboxes######
 #Create new array list variable#
 $Rollup = New-Object System.Collections.ArrayList
