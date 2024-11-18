@@ -1,6 +1,4 @@
-#######################################
-#######################################
-##Set View Details on appointments##
+#Set View Details on appointments##
 $email = "roomusershared@example.com"
 $Cal = $email + ":\calendar"
 Set-MailboxFolderPermission -Identity $Cal -User default -AccessRights LimitedDetails
