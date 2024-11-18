@@ -13,10 +13,8 @@ $displayName = "mailboxdisplayname"
 New-Mailbox -Shared -Name $displayName -DisplayName $displayName -PrimarySMTPAddress $primaryEmail
 Set-Mailbox $displayName -EmailAddress $primaryEmail
 
-###############################################################################################################################################
-##########################################     Manage Shared Mailbox delegate permissions     #################################################
-###############################################################################################################################################
 
+#Manage Shared Mailbox delegate permissions#
 #Grant user full access delegation permissions to mailbox and map to Outlook (application)#
 Add-MailboxPermission -Identity "Fred.Jones@example.com" -User "Thomas.Ready@example.com" -AccessRights FullAccess -InheritanceType All -Automapping $false
 
