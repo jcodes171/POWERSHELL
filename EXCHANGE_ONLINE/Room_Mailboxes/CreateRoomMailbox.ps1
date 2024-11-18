@@ -1,5 +1,3 @@
-#######################################
-#######################################
 $email = "primaryemail@example.com"
 $DN = "RoomDisplayName"
 $Alias = "emailalias"
